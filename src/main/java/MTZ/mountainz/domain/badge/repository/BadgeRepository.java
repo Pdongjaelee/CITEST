@@ -11,4 +11,5 @@ import MTZ.mountainz.domain.badge.entity.Badge;
 public interface BadgeRepository extends JpaRepository<Badge, Long> {
 
 	List<Badge> findAllByMemberId(Long memberId);
+
 }
