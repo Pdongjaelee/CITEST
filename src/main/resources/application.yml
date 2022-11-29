@@ -1,24 +1,24 @@
 spring:
   # mysql aws
-  #  datasource:
-  #    driver-class-name: com.mysql.cj.jdbc.Driver
-  #    url:
-  #    username:
-  #    password:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
 
   # h2 local
-  datasource:
-    url: jdbc:h2:mem:testdb;MODE=MYSQL
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
+  #  datasource:
+  #    url: jdbc:h2:mem:testdb;MODE=MYSQL
+  #    driver-class-name: org.h2.Driver
+  #    username: sa
+  #    password:
 
   # mysql local
   #  datasource:
   #    driver-class-name: com.mysql.cj.jdbc.Driver
-  #    url:
-  #    username:
-  #    password:
+  #    url: ${DB_LOCAL_URL}
+  #    username: ${DB_LOCAL_USERNAME}
+  #    password: ${DB_LOCAL_PASSWORD}
 
   h2:
     console:
@@ -29,7 +29,7 @@ spring:
     hibernate:
       ddl-auto: update
       #      ddl-auto: create
-    #      ddl-auto: none
+  #      ddl-auto: none
   properties:
     hibernate:
       show_sql: true
@@ -68,9 +68,9 @@ cloud:
       access-key:
       secret-key:
     s3:
-      bucket:
+      bucket: ${BUCKET_NAME}
     region:
-      static:
+      static: ap-northeast-2
     stack:
       auto: false
 
@@ -80,4 +80,4 @@ cloud:
       max-request-size: 10MB
 
 jwt:
-  secret: /
+  secret: c3ByaW5nLWJvb3Qtc2VjdXJpdHktand0LXR1dG9yaWFsLWppd29vbi1zcHJpbmctYm9vdC1zZWN1cml0eS1qd3QtdHV0b3JpYWwK
